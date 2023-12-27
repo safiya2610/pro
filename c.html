@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: #061123;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.snow {
+  width: 200vh;
+  height: 100vh;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 50' style='enable-background:new 0 0 50 50%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st1%7Bopacity:0.3%3Bfill:%23FFFFFF%3B%7D.st3%7Bopacity:0.1%3Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Ccircle class='st1' cx='5' cy='8' r='1'/%3E%3Ccircle class='st1' cx='38' cy='3' r='1'/%3E%3Ccircle class='st1' cx='12' cy='4' r='1'/%3E%3Ccircle class='st1' cx='16' cy='16' r='1'/%3E%3Ccircle class='st1' cx='47' cy='46' r='1'/%3E%3Ccircle class='st1' cx='32' cy='10' r='1'/%3E%3Ccircle class='st1' cx='3' cy='46' r='1'/%3E%3Ccircle class='st1' cx='45' cy='13' r='1'/%3E%3Ccircle class='st1' cx='10' cy='28' r='1'/%3E%3Ccircle class='st1' cx='22' cy='35' r='1'/%3E%3Ccircle class='st1' cx='3' cy='21' r='1'/%3E%3Ccircle class='st1' cx='26' cy='20' r='1'/%3E%3Ccircle class='st1' cx='30' cy='45' r='1'/%3E%3Ccircle class='st1' cx='15' cy='45' r='1'/%3E%3Ccircle class='st1' cx='34' cy='36' r='1'/%3E%3Ccircle class='st1' cx='41' cy='32' r='1'/%3E%3C/svg%3E");
+  background-position: 0px 0px;
+  animation: animatedBackground 10s linear infinite;
+}
+
+.snow div {
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 50' style='enable-background:new 0 0 50 50%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st1%7Bopacity:0.7%3Bfill:%23FFFFFF%3B%7D.st3%7Bopacity:0.1%3Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Ccircle class='st3' cx='4' cy='14' r='1'/%3E%3Ccircle class='st3' cx='43' cy='3' r='1'/%3E%3Ccircle class='st3' cx='31' cy='30' r='2'/%3E%3Ccircle class='st3' cx='19' cy='23' r='1'/%3E%3Ccircle class='st3' cx='37' cy='22' r='1'/%3E%3Ccircle class='st3' cx='43' cy='16' r='1'/%3E%3Ccircle class='st3' cx='8' cy='45' r='1'/%3E%3Ccircle class='st3' cx='29' cy='39' r='1'/%3E%3Ccircle class='st3' cx='13' cy='37' r='1'/%3E%3Ccircle class='st3' cx='47' cy='32' r='1'/%3E%3Ccircle class='st3' cx='15' cy='4' r='2'/%3E%3Ccircle class='st3' cx='9' cy='27' r='1'/%3E%3Ccircle class='st3' cx='30' cy='9' r='1'/%3E%3Ccircle class='st3' cx='25' cy='15' r='1'/%3E%3Ccircle class='st3' cx='21' cy='45' r='2'/%3E%3Ccircle class='st3' cx='42' cy='45' r='1'/%3E%3C/svg%3E");
+  background-position: 0px 0px;
+  animation: animatedBackground 15s linear infinite;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0px 300px;
+  }
+}
+.santa{
+    height: 200px;
+    animation: anima 10s 80;
+    animation-delay: 2s;
+    position: relative;
+}
+@keyframes anima {
+        0%{top:0px;left:0px}
+        100%{top:0px;left: 895px;}
+}
+.boy{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 4px solid darkred;
+    box-shadow: 0 0 30px white;
+}
+.snowM{
+    height: 500px;
+}
+.t{
+    height: 500px;
+}
+.body{
+    display:flex;
+}
+.doorframe {
+   display: flex;
+   perspective: 1200px;
+   transform-style: preserve-3d;
+    height: 200px;  
+    background-color: darkred;  
+    border: 5px solid aliceblue;  
+}
+
+.door {
+   flex-grow: 1;
+   transform-style: preserve-3d;
+   transform-origin: left center;
+   transition: all 0.5s;
+   backface-visibility: hidden;
+   position: relative;
+   background-color: aliceblue;
+   border:8px solid darkred;
+}
+
+.door:before { content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   backface-visibility: hidden;
+   transform-style: preserve-3d;
+   transform: rotateY(180deg);
+}
+
+.doorframe:focus .door,
+.doorframe:hover .door {
+  /* 8 */ transform: rotate3d(0, 1, 0, -130deg);
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="snow">
+        <div class="head" style="height: 210px;display: flex;">
+            <div class="s">
+                <img src="https://png.pngtree.com/png-clipart/20221223/original/pngtree-santa-sleigh-vector-png-image_8800722.png"  class="santa">
+            </div>
+            <div class="b" style="margin-left: 850px ;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpKUYBJOrbdCTro10iteoqb0YOETfGFlCNHA&usqp=CAU"  class="boy">
+            </div>
+        </div>
+
+      <div class="body" style="height: 500px;">
+        <div class="snowman" style="height:400px;width: 1500px;">
+            <img  src="https://png.pngtree.com/png-clipart/20231106/original/pngtree-cute-snowmen-hand-drawn-in-watercolor-with-a-christmas-tree-png-image_13511999.png"  class="snowM">
+        </div>
+        <div class="merimarzi">
+                <h1 style="color: aliceblue;font-size: xx-large;font-weight: 1000;" align="center">SA<span style="color:;">F</span>IYA WISHES YOU</h1>
+
+                <div class="doorframe" tabindex="0" style="width: 400px;height: 400px;"><h1>hello</h1>
+                  <div class="door" style="position:fixed;">
+                    <img style="height: 390px;" src="https://png.pngtree.com/png-clipart/20201208/original/pngtree-3d-sign-of-merry-christmas-lantern-png-image_5590855.png" alt="" class="marry">
+                  </div>
+                </div>
+                
+        </div>
+        <div class="tree">
+           <img src="https://png.pngtree.com/png-clipart/20231001/original/pngtree-christmas-tree-and-christmas-presents-png-image_13028383.png"  class="t">
+        </div>
+      </div>
+
+    
+
+
+      </div>
+
+
+</body>
+</html>
+
+
